@@ -1,0 +1,89 @@
+body{
+	overflow: hidden;
+}
+.logincontainer {
+			display: grid;
+			grid-template-columns: 55% 45%;
+		}
+		
+		.logindiv1 {
+			grid-column: 1;
+		}
+		
+		.logindiv2 {
+			grid-column: 2;
+			margin-top: -40px;
+		}
+		.writingsonimg{
+			font-size: 30px;
+			margin-top: -650px;
+			margin-left: 250px;
+			font-family: constantia;
+			font-weight: bolder;
+		}
+		span{
+			font-size: 60px;
+			margin-top: -600px;
+			margin-left: 250px;
+			font-family: constantia;
+			font-weight: bolder;
+		}
+		.btn1div{
+			font-size: 60px;
+			margin-left: 250px;
+			font-family: constantia;
+			font-weight: bolder;
+		}
+		.btn1{
+			background-color: royalblue;
+			font-size: 25px;
+			font-weight: bolder;
+			font-family: times new roman;
+			border:royalblue;
+			border-radius: 30px;
+			color: white;
+			margin-top: 20px;
+			width: 120px;
+			height: 50px;
+		}
+		.heading1{
+			display: flex;
+			color: royalblue;
+			font-weight: bolder;
+			font-size: 30px;
+			margin-left: 50px;
+			margin-top: 30px;
+		}
+		div div header ul li a:hover{
+			color: white;
+			background-color: royalblue;
+		}
+		div div header ul li{
+			font-size: 30px;
+		}
+				.container{
+			position: relative;
+			margin-top: 20px;
+			font-size: 20px;
+		}
+		.credcontainer{
+			margin-top: 70px;
+			margin-left: 125px;
+		}
+		.btn2,.btn3{
+			background-color: transparent;
+			border: none;
+			color: darkgray;
+			padding: 10px;
+			font-size: 25px;
+		}
+		.btn2:hover,.btn3:hover{
+			background-color: royalblue;
+			border-bottom: royalblue;
+			color: white;
+			border-radius: 5mm;
+			font-size: 25px;
+		}
+		.btn3{
+			margin-left: 50px;
+		}

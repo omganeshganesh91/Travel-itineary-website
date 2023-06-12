@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Travel Itinerary Website</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.container {
+			margin-top: 50px;
+		}
+		.btn1{
+			background-color: royalblue;
+			font-size: 25px;
+			font-weight: bolder;
+			font-family: times new roman;
+			border:royalblue;
+			border-radius: 30px;
+			color: white;
+			margin-top: 20px;
+			width: 300px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+<div class="heading1" style="display: flex;color: royalblue;font-weight: bolder;font-size: 30px;margin-left: 120px;margin-top: 30px;">Travel Itinerary</div>
+	 <div class="container" style="margin-top: 0px;margin-right: 125px;font-size: 20px;">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="homepage.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="places.html" class="nav-link">Places</a></li>
+        <li class="nav-item"><a href="itinerary.html" class="nav-link active">Itinerary</a></li>
+        <li class="nav-item"><a href="accommodations.html" class="nav-link">Accommodations</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="loginpage.html" class="nav-link" style="margin-left: 1000px;margin-top: -45px;">Login</a></li>
+      </ul>
+    </header>
+  </div>
+
+<div class="container">
+		<div class="form-group" style="margin-top: -40px;">
+			<label for="num_days">Number of days:</label>
+			<input type="number" class="form-control" id="num_days">
+		</div>
+		<div class="form-group">
+			<label for="activities">Activities (separated by commas):</label>
+			<input type="text" class="form-control" id="activities">
+		</div>
+		<button style="margin-top:15px" type="button" class="btn btn-primary" onclick="generateItinerary()">Generate Itinerary</button>
+		<hr>
+		<div id="itinerary"></div>
+		<hr>
+		<button class="btn1">View Accommodations</button>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="jquery-3.6.3-min.js"></script>
+  <script type="text/javascript">
+  	function generateItinerary() {
+	var numDays = parseInt($('#num_days').val());
+	var activities = $('#activities').val().split(',');
+	var itinerary = [];
+	for (var i = 0; i < numDays; i++) {
+		itinerary.push([]);
+	}
+	for (var i = 0; i < activities.length; i++) {
+		var dayIndex = i % numDays;
+		itinerary[dayIndex].push(activities[i].trim());
+	}
+	var html = '';
+	for (var i = 0; i < itinerary.length; i++) {
+		html += '<h2 style="font-family:sans-serif;">Day ' + (i + 1) + '</h2>';
+		if (itinerary[i].length == 0) {
+			html += '<p>No activities planned for this day.</p>';
+		} else {
+			html += '<ol>';
+			for (var j = 0; j < itinerary[i].length; j++) {
+				html += '<li style="font-weight:bolder;font-family:sans-serif;">' + itinerary[i][j] + '</li>';
+			}
+			html += '</ol>';
+		}
+	}
+	$('#itinerary').html(html);
+}
+$(document).ready(function() {
+	$(".btn1").click(function() {
+		window.location.href="accommodations.html";
+	});
+});
+  </script>
+</body>
+</html>
